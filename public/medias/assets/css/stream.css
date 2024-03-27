@@ -1,0 +1,71 @@
+.stream{
+    position: relative;
+    padding: 5px 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: transparent;
+    border: transparent;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    transition: all 0.6s ease;
+}
+
+.stream::after{
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    left: -10%;
+    top: 0;
+    transform: skew(20deg, 0deg);
+    background-color: #ffffff;
+    z-index: -1;
+    transition: all 0.4s ease;
+    opacity: 1;
+}
+
+.stream::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: skew(20deg, 0deg);
+    border: 3px solid #0263d1;
+    background-color: #0077ff;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.stream:hover::after{
+    background-color: #ffffff31;
+    transform: skew(20deg, 0deg) translateX(150px);
+    opacity: 0;
+}
+
+.stream:hover::before{
+    background-color: #03cc57;
+    border: 3px solid #029740;
+    transform: skew(20deg, 0deg) scale(1.1);
+}
+
+@media (max-width: 400px) {
+    /* .book-a-table-btn {
+      display: none;
+    } */
+    .stream {
+        margin-left: 10px; /* Agregar margen a la derecha */
+    }
+}
+
+/* Icono de reproducción/pausa */
+#playPauseIcon {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+/* Texto "Play" o "Pause" */
+#playPauseText {
+    font-weight: bold; /* Texto en negrita */
+}
+
